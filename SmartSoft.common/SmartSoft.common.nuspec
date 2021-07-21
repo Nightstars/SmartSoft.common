@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.2</version>
+    <title>SmartSoft.common</title>
+    <authors>christ chang</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Nightstars/WpfUpdate</projectUrl>
+    <iconUrl>https://img.zcool.cn/community/01cdab5a66a75ea8012113c7849434.jpg@1280w_1l_2o_100sh.jpg</iconUrl>
+    <description>SmartSoft Studio 通用工具包</description>
+    <releaseNotes>1.增加新特性</releaseNotes>
+    <copyright>SmartSoft Studio 2021</copyright>
+    <tags>SmartSoft.common</tags>
+  </metadata>
+</package>
