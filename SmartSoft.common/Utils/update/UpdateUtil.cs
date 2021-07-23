@@ -10,7 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartSoft.common.Utils
+namespace SmartSoft.common.Utils.update
 {
     public class UpdateUtil
     {
@@ -62,15 +62,18 @@ namespace SmartSoft.common.Utils
         {
             try
             {
-                FileStream md5filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+                string tempmd5 = null;
+                FileStream appmd5filestream = new FileStream($"{fileName}.exe", FileMode.Open, FileAccess.Read, FileShare.Read);
+                FileStream dllmd5filestream = new FileStream($"{fileName}.dll", FileMode.Open, FileAccess.Read, FileShare.Read);
                 MD5 mD5 = MD5.Create();
-                byte[] hash_byte = mD5.ComputeHash(md5filestream);
-                md5filestream.Close();
-                return Convert.ToBase64String(hash_byte);
+                tempmd5 = Convert.ToBase64String(mD5.ComputeHash(appmd5filestream));
+                tempmd5 += Convert.ToBase64String(mD5.ComputeHash(dllmd5filestream));
+                appmd5filestream.Close();
+                dllmd5filestream.Close();
+                return Convert.ToBase64String(mD5.ComputeHash(Encoding.UTF8.GetBytes(tempmd5)));
             }
             catch (Exception)
             {
-
                 return null;
             }
         }

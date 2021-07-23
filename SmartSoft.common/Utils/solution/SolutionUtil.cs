@@ -19,6 +19,10 @@ namespace SmartSoft.common.Utils.solution
         #endregion
 
         #region parse
+        /// <summary>
+        /// SlnParse
+        /// </summary>
+        /// <returns></returns>
         public List<SolutionInfo> SlnParse(){
             List<SolutionInfo> list = new List<SolutionInfo>();
             using FileStream fileStream = new FileStream(_solutionName, FileMode.Open, FileAccess.Read);
